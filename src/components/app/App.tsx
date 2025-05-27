@@ -1,10 +1,11 @@
-import CourseCard from "../common/card/card";
+import CourseCard from "../common/card/CourseCard";
+import AppRouter from "./AppRouter";
 import "./global.module.scss";
 
 function App() {
   return (
     <>
-      <CourseCard />
+      <AppRouter />
     </>
   );
 }

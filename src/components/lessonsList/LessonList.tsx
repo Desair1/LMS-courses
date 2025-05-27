@@ -1,5 +1,5 @@
-const Lesson = () => {
+const LessonsList = () => {
   return <></>;
 };
 
-export default Lesson;
+export default LessonsList;
