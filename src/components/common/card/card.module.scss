@@ -1,0 +1,147 @@
+@use "sass:color";
+
+$dark-bg: #121212;
+$darker-bg: #1e1e1e;
+$light-text: #f0f0f0;
+$secondary-text: #bdbdbd;
+$accent-color: #64ffda;
+$hover-color: rgba($accent-color, 0.2);
+
+.courseCard {
+  display: flex;
+  flex-direction: column;
+  background-color: $darker-bg;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.courseImage {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  img.courseImageImg {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.courseContent {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.courseHeader {
+  margin-bottom: 12px;
+
+  h2.courseAuthor {
+    font-size: 1rem;
+    color: $secondary-text;
+    margin-bottom: 4px;
+  }
+
+  h3.courseTitle {
+    font-size: 1.4rem;
+    color: $light-text;
+    margin-bottom: 8px;
+  }
+}
+
+.courseDescription {
+  font-size: 1rem;
+  color: $secondary-text;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.courseMeta {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  color: $secondary-text;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.courseActions {
+  margin-top: auto;
+  text-align: right;
+
+  button.courseActionBtn {
+    background-color: $accent-color;
+    color: $dark-bg;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: color.adjust($accent-color, $lightness: 10%);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $hover-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .courseContent {
+    padding: 12px;
+  }
+
+  .courseHeader {
+    margin-bottom: 8px;
+
+    h2.courseAuthor {
+      font-size: 0.9rem;
+    }
+
+    h3.courseTitle {
+      font-size: 1.2rem;
+    }
+  }
+
+  .courseDescription {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .courseMeta {
+    font-size: 0.8rem;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .courseActions button.courseActionBtn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
