@@ -1,4 +1,5 @@
-import CourseCard from "./components/common/card/card";
+import CourseCard from "../common/card/card";
+import "./global.module.scss";
 
 function App() {
   return (
