@@ -1,16 +1,8 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type ICourseSummary from "../../../types/courseSummary";
 
-interface ICourse {
-  id: string;
-  title: string;
-  author: string;
-  fullDescription?: string;
-  duration?: string;
-  rating?: number;
-  imageURL?: string;
-}
 interface ICoursesState {
-  courses: ICourse[];
+  courses: ICourseSummary[];
 }
 
 const initialState: ICoursesState = {
@@ -21,7 +13,7 @@ const corsesSlice = createSlice({
   name: "courses",
   initialState,
   reducers: {
-    getCourses(state, action: PayloadAction<ICourse[]>) {
+    getCourses(state, action: PayloadAction<ICourseSummary[]>) {
       state.courses = action.payload;
     },
   },
