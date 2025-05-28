@@ -3,5 +3,5 @@ export default interface ICourseDetails {
   title: string;
   author: string;
   summary: string;
-  imageURL: string;
+  imageURL?: string;
 }

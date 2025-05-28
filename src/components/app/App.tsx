@@ -5,7 +5,7 @@ import "./global.module.scss";
 function App() {
   return (
     <>
-      <AppRouter />
+      <CourseCard></CourseCard>
     </>
   );
 }
