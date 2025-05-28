@@ -4,8 +4,8 @@ import lessonsReducer from "./slices/lessonsSlice";
 
 export const store = configureStore({
   reducer: {
-    coursesReducer,
-    lessonsReducer,
+    courses: coursesReducer,
+    lessons: lessonsReducer,
   },
 });
 

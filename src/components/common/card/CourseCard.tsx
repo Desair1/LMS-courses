@@ -1,15 +1,6 @@
 import React from "react";
 import styles from "./card.module.scss";
-
-interface ICourseSummary {
-  id?: string;
-  title?: string;
-  author?: string;
-  fullDescription?: string;
-  duration?: string;
-  rating?: number;
-  imageURL?: string;
-}
+import type ICourseSummary from "../../../types/courseSummary";
 
 const CourseCard: React.FC<ICourseSummary> = ({
   id = "1",
