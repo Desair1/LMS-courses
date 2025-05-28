@@ -3,7 +3,7 @@ import Courses from "../courses/Courses";
 import CourseCard from "../common/card/CourseCard";
 import PageNotFound from "../NotFoundPage";
 import LessonsList from "../lessonsList/LessonList";
-import LessonDetails from "../lesson/lesson";
+import LessonDetails from "../lesson/Lesson";
 
 const AppRouter = () => {
   return (
