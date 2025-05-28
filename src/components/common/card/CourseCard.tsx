@@ -3,13 +3,13 @@ import styles from "./card.module.scss";
 import type ICourseSummary from "../../../types/courseSummary";
 
 const CourseCard: React.FC<ICourseSummary> = ({
-  id = "1",
-  title = "Название курса",
-  author = "Автор не указан",
-  fullDescription = "Описание курса отсутствует",
-  duration = "0 часов",
-  rating = 0,
-  imageURL = "",
+  id,
+  title,
+  author,
+  fullDescription,
+  duration,
+  rating,
+  imageURL,
 }) => {
   const handleMoreDetails = () => {
     alert(`Переход к курсу: ${title}`);
@@ -39,7 +39,7 @@ const CourseCard: React.FC<ICourseSummary> = ({
         )}
 
         <div className={styles.courseMeta}>
-          {rating > 0 && <span>Рейтинг: {rating}</span>}
+          {rating && rating > 0 && <span>Рейтинг: {rating}</span>}
           {duration && <span>Длительность: {duration}</span>}
         </div>
 

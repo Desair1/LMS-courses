@@ -1,16 +1,19 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { SERVER_URL } from "../../constants/api";
+import type ICourseSummary from "../../types/courseSummary";
+import type ICourseDetails from "../../types/courseDetails";
 
-export const fetchCourses = async () => {
-  const response = await fetch(`${SERVER_URL}/courses`);
-  return response.json();
-};
+export const coursesAPI = createApi({
+  reducerPath: "coursesAPI",
+  baseQuery: fetchBaseQuery({ baseUrl: SERVER_URL }),
+  endpoints: (builder) => ({
+    getCourses: builder.query<ICourseSummary[], void>({
+      query: () => "/courses",
+    }),
+    getCourseById: builder.query<ICourseDetails, string>({
+      query: (courseId) => `/courses/${courseId}`,
+    }),
+  }),
+});
 
-export const fetchCoursesDetails = async (courseId: string) => {
-  const response = await fetch(`${SERVER_URL}/courses/${courseId}`);
-  return response.json();
-};
-
-export const fetchCourseLessons = async (courseId: string) => {
-  const response = await fetch(`${SERVER_URL}/courses/${courseId}/lessons`);
-  return response.json();
-};
+export const { useGetCoursesQuery, useGetCourseByIdQuery } = coursesAPI;

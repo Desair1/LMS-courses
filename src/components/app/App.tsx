@@ -1,10 +1,10 @@
-import CourseCard from "../common/card/CourseCard";
+import Courses from "../courses/Courses";
 import "./global.module.scss";
 
 function App() {
   return (
     <>
-      <CourseCard />
+      <Courses />
     </>
   );
 }
