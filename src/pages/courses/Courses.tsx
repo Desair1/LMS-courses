@@ -1,5 +1,5 @@
 import { useGetCoursesQuery } from "../../features/api/coursesAPI";
-import CourseCard from "../common/card/CourseCard";
+import CourseCard from "../../entities/card/CourseCard";
 
 const Courses = () => {
   const { data: courses, isLoading, error } = useGetCoursesQuery();

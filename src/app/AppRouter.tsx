@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Courses from "../components/courses/Courses";
-import CourseCard from "../components/common/card/CourseCard";
-import PageNotFound from "../components/NotFoundPage";
-import LessonsList from "../components/lessonsList/LessonList";
-import LessonDetails from "../components/lesson/Lesson";
+import Courses from "../pages/courses/Courses";
+import CourseCard from "../entities/card/CourseCard";
+import PageNotFound from "../pages/NotFoundPage/NotFoundPage";
+import LessonsList from "../pages/lessonsList/LessonList";
+import LessonDetails from "../entities/lesson/Lesson";
 
 const AppRouter = () => {
   return (
