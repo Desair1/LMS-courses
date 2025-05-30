@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Courses from "../pages/courses/Courses";
-import CourseCard from "../entities/card/CourseCard";
 import PageNotFound from "../pages/NotFoundPage/NotFoundPage";
 import LessonsList from "../entities/lessonsList/LessonList";
 import LessonCard from "../entities/lesson/Lesson";
