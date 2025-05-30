@@ -1,8 +1,7 @@
-import React from "react";
 import styles from "./card.module.scss";
 import type ICourseSummary from "../../types/courseSummary";
 
-const CourseCard: React.FC<ICourseSummary> = ({
+const CourseCard = ({
   id,
   title,
   author,
@@ -10,7 +9,7 @@ const CourseCard: React.FC<ICourseSummary> = ({
   duration,
   rating,
   imageURL,
-}) => {
+}: ICourseSummary) => {
   const handleMoreDetails = () => {
     alert(`Переход к курсу: ${title}`);
   };
