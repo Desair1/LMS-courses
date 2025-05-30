@@ -1,5 +1,6 @@
 import styles from "./card.module.scss";
 import type ICourseSummary from "../../types/courseSummary";
+import { Link } from "react-router-dom";
 
 const CourseCard = ({
   id,
@@ -43,12 +44,13 @@ const CourseCard = ({
         </div>
 
         <div className={styles.courseActions}>
-          <button
+          <Link
+            to={`/courses/${id}`}
             className={styles.courseActionBtn}
             onClick={handleMoreDetails}
           >
             Подробнее
-          </button>
+          </Link>
         </div>
       </div>
     </article>
