@@ -1,0 +1,45 @@
+@use "sass:color";
+
+$dark-bg: #121212;
+$darker-bg: #1e1e1e;
+$light-text: #f0f0f0;
+$secondary-text: #bdbdbd;
+$accent-color: #64ffda;
+$hover-color: rgba($accent-color, 0.2);
+$completed-bg: #2e7d32;
+$completed-border: #4caf50;
+
+.lessonCard {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: $darker-bg;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease-in-out;
+  border: 1px solid $dark-bg;
+
+  &:hover {
+    background-color: color.adjust($darker-bg, $lightness: 5%);
+  }
+
+  &.completed {
+    background-color: $completed-bg;
+    border-color: $completed-border;
+
+    &:hover {
+      background-color: color.adjust($completed-bg, $lightness: 5%);
+    }
+  }
+}
+
+.lessonTitle {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: $light-text;
+}
+
+.lessonDuration {
+  font-size: 0.9rem;
+  color: $secondary-text;
+}

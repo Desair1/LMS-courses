@@ -3,7 +3,7 @@ import Courses from "../pages/courses/Courses";
 import CourseCard from "../entities/card/CourseCard";
 import PageNotFound from "../pages/NotFoundPage/NotFoundPage";
 import LessonsList from "../pages/lessonsList/LessonList";
-import LessonDetails from "../entities/lesson/Lesson";
+import LessonCard from "../entities/lesson/Lesson";
 
 const AppRouter = () => {
   return (
@@ -14,7 +14,7 @@ const AppRouter = () => {
         <Route path="/courses/:courseId/lessons" element={<LessonsList />} />
         <Route
           path="/courses/:courseId/lessons/:lessonId"
-          element={<LessonDetails />}
+          element={<LessonCard />}
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

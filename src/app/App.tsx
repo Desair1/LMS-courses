@@ -1,10 +1,10 @@
-import Courses from "../pages/courses/Courses";
+import LessonsList from "../pages/lessonsList/LessonList";
 import "./global.module.scss";
 
 function App() {
   return (
     <>
-      <Courses />
+      <LessonsList />
     </>
   );
 }
