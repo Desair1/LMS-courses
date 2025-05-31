@@ -6,7 +6,7 @@ export const lessonAPI = createApi({
   reducerPath: "lessonsAPI",
   baseQuery: fetchBaseQuery({ baseUrl: SERVER_URL }),
   endpoints: (builder) => ({
-    getLessons: builder.query<ILesson[], string>({
+    getLessonsForCourse: builder.query<ILesson[], string>({
       query: (courseId) => `/courses/${courseId}/lessons`,
     }),
     getLessonById: builder.query<
@@ -19,4 +19,4 @@ export const lessonAPI = createApi({
   }),
 });
 
-export const { useGetLessonsQuery, useGetLessonByIdQuery } = lessonAPI;
+export const { useGetLessonsForCourseQuery, useGetLessonByIdQuery } = lessonAPI;

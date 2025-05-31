@@ -6,27 +6,45 @@
       "author": "Владилен Минин",
       "fullDescription": "Это курсы по reduxjs за авторством Владилена Минина",
       "duration": "8 часов",
-      "rating": 5,
-      "lessons": [
-        {
-          "title": "Первый урок",
-          "id": "1",
-          "duration": "8 минут",
-          "isCompleted": true
-        },
-        {
-          "title": "Второй урок",
-          "id": "2",
-          "duration": "10 минут",
-          "isCompleted": false
-        },
-        {
-          "title": "Третий урок",
-          "id": "3",
-          "duration": "10 минут",
-          "isCompleted": false
-        }
-      ]
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "title": "React для начинающих",
+      "author": "Иванов Иван",
+      "fullDescription": "Курс по основам React",
+      "duration": "10 часов",
+      "rating": 4
+    }
+  ],
+  "lessons": [
+    {
+      "id": "1",
+      "title": "Первый урок по Redux",
+      "duration": "10 минут",
+      "isCompleted": true,
+      "courseId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Второй урок по Redux",
+      "duration": "15 минут",
+      "isCompleted": false,
+      "courseId": "1"
+    },
+    {
+      "id": "3",
+      "title": "Введение в React",
+      "duration": "12 минут",
+      "isCompleted": true,
+      "courseId": "2"
+    },
+    {
+      "id": "4",
+      "title": "Компоненты в React",
+      "duration": "18 минут",
+      "isCompleted": false,
+      "courseId": "2"
     }
   ]
 }

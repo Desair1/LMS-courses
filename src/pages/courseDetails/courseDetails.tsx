@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useGetCourseByIdQuery } from "../../features/api/coursesAPI";
-import { useGetLessonsQuery } from "../../features/api/lessonAPI";
+import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
 import LessonsList from "../../entities/lessonsList/LessonList";
 
 const CourseDetails = () => {
@@ -16,7 +16,7 @@ const CourseDetails = () => {
     data: lessons,
     isLoading: lessonsIsLoading,
     error: lessonsError,
-  } = useGetLessonsQuery(courseId!);
+  } = useGetLessonsForCourseQuery(courseId!);
 
   if (courseIsLoading) {
     return <div>Загрузка...</div>;
