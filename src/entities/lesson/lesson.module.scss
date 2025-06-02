@@ -9,13 +9,6 @@ $hover-color: rgba($accent-color, 0.2);
 $completed-bg: #2e7d32;
 $completed-border: #4caf50;
 
-ul,
-li {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
 .lessonCard {
   display: flex;
   flex-direction: column;
@@ -50,4 +43,15 @@ li {
 .lessonDuration {
   font-size: 0.9rem;
   color: $secondary-text;
+}
+
+.showLessonCardDetails {
+  text-align: end;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.lessonCardDetails {
+  text-align: end;
+  margin-top: 0.15em;
 }
