@@ -9,6 +9,13 @@ $hover-color: rgba($accent-color, 0.2);
 $completed-bg: #2e7d32;
 $completed-border: #4caf50;
 
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
 .lessonCard {
   display: flex;
   flex-direction: column;
@@ -18,6 +25,7 @@ $completed-border: #4caf50;
   margin-bottom: 8px;
   transition: background-color 0.2s ease-in-out;
   border: 1px solid $dark-bg;
+  width: 85%;
 
   &:hover {
     background-color: color.adjust($darker-bg, $lightness: 5%);

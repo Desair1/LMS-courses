@@ -15,7 +15,8 @@ $hover-color: rgba($accent-color, 0.2);
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
-  width: 100%;
+  width: 95%;
+  margin-top: 0.7em;
 
   &:hover {
     transform: translateY(-5px);

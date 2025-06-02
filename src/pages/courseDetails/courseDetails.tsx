@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useGetCourseByIdQuery } from "../../features/api/coursesAPI";
 import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
 import LessonsList from "../../entities/lessonsList/LessonList";
+import styles from "./courseDetails.module.scss";
 
 const CourseDetails = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -40,8 +41,9 @@ const CourseDetails = () => {
         <div>
           <h2>{course.title}</h2>
           <div>{course.fullDescription}</div>
-          <div>{course.id}</div>
-          <div>{lessons && <LessonsList lessons={lessons} />}</div>
+          <div className={styles.wrapper}>
+            {lessons && <LessonsList lessons={lessons} />}
+          </div>
         </div>
       )}
     </>

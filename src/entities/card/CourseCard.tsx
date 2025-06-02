@@ -11,10 +11,6 @@ const CourseCard = ({
   rating,
   imageURL,
 }: ICourseSummary) => {
-  const handleMoreDetails = () => {
-    alert(`Переход к курсу: ${title}`);
-  };
-
   return (
     <article className={styles.courseCard}>
       {imageURL && (
@@ -44,11 +40,7 @@ const CourseCard = ({
         </div>
 
         <div className={styles.courseActions}>
-          <Link
-            to={`/courses/${id}`}
-            className={styles.courseActionBtn}
-            onClick={handleMoreDetails}
-          >
+          <Link to={`/courses/${id}`} className={styles.courseActionBtn}>
             Подробнее
           </Link>
         </div>
