@@ -13,17 +13,6 @@ const CourseCard = ({
 }: ICourseSummary) => {
   return (
     <article className={styles.courseCard}>
-      {imageURL && (
-        <div className={styles.courseImage}>
-          <img
-            src={imageURL}
-            alt={`Превью курса: ${title}`}
-            className={styles.courseImageImg}
-            loading="lazy"
-          />
-        </div>
-      )}
-
       <div className={styles.courseContent}>
         <div className={styles.courseHeader}>
           <h2 className={styles.courseAuthor}>{author}</h2>
@@ -33,7 +22,6 @@ const CourseCard = ({
         {fullDescription && (
           <p className={styles.courseDescription}>{fullDescription}</p>
         )}
-
         <div className={styles.courseMeta}>
           {rating && rating > 0 && <span>Рейтинг: {rating}</span>}
           {duration && <span>Длительность: {duration}</span>}
@@ -45,6 +33,14 @@ const CourseCard = ({
           </Link>
         </div>
       </div>
+
+      {imageURL && (
+        <img
+          src={imageURL}
+          alt={`Превью курса: ${title}`}
+          className={styles.courseImage}
+        />
+      )}
     </article>
   );
 };

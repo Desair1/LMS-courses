@@ -19,16 +19,12 @@ const CourseDetails = () => {
     error: lessonsError,
   } = useGetLessonsForCourseQuery(courseId!);
 
-  if (courseIsLoading) {
+  if (courseIsLoading && lessonsIsLoading) {
     return <div>Загрузка...</div>;
   }
 
   if (courseError) {
-    console.log(courseError);
-  }
-
-  if (lessonsIsLoading) {
-    return <div>Загрузка...</div>;
+    console.log("Course error", courseError);
   }
 
   if (lessonsError) {
