@@ -1,5 +1,6 @@
 import { useGetReviewsForCourseQuery } from "../../features/api/reviewsAPI";
 import Review from "../review/Review";
+import styles from "./reviews.module.scss";
 
 interface ReviewsListProps {
   courseId: string | undefined;
@@ -24,7 +25,11 @@ const ReviewsList = ({ courseId }: ReviewsListProps) => {
     <div>
       <h2>Отзывы</h2>
       {reviews &&
-        reviews.map((review) => <Review key={review.id} {...review} />)}
+        reviews.map((review) => (
+          <div className={styles.wrapper}>
+            <Review key={review.id} {...review} />
+          </div>
+        ))}
     </div>
   );
 };
