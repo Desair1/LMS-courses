@@ -47,5 +47,21 @@
       "isCompleted": false,
       "courseId": "2"
     }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "username": "Иван",
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quis eaque nulla vero enim fuga.",
+      "rating": 5,
+      "courseId": "1"
+    },
+    {
+      "id": "2",
+      "username": "Мария",
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quis eaque nulla vero enim fuga.",
+      "rating": 4,
+      "courseId": "2"
+    }
   ]
 }
