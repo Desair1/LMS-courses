@@ -21,6 +21,10 @@ const ReviewsList = ({ courseId }: ReviewsListProps) => {
     console.log("Отзывы", error);
   }
 
+  if (reviews?.length === 0 || reviews === undefined) {
+    return <div>Отзывов пока что нет...</div>;
+  }
+
   return (
     <div>
       <h2>Отзывы</h2>
