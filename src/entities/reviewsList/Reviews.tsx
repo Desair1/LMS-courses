@@ -26,8 +26,8 @@ const ReviewsList = ({ courseId }: ReviewsListProps) => {
       <h2>Отзывы</h2>
       {reviews &&
         reviews.map((review) => (
-          <div className={styles.wrapper}>
-            <Review key={review.id} {...review} />
+          <div className={styles.wrapper} key={review.id}>
+            <Review {...review} />
           </div>
         ))}
     </div>

@@ -3,10 +3,11 @@ import { useGetCourseByIdQuery } from "../../features/api/coursesAPI";
 import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
 import LessonsList from "../../entities/lessonsList/LessonList";
 import styles from "./courseDetails.module.scss";
-import ReviewsList from "../../entities/reviewsList/Reviews";
+import { lazy, Suspense } from "react";
 
 const CourseDetails = () => {
   const { courseId } = useParams<{ courseId: string }>();
+  const ReviewsList = lazy(() => import("../../entities/reviewsList/Reviews"));
 
   const {
     data: course,
@@ -20,7 +21,7 @@ const CourseDetails = () => {
     error: lessonsError,
   } = useGetLessonsForCourseQuery(courseId!);
 
-  if (courseIsLoading && lessonsIsLoading) {
+  if (courseIsLoading || lessonsIsLoading) {
     return <div>Загрузка...</div>;
   }
 
@@ -41,7 +42,9 @@ const CourseDetails = () => {
           <div className={styles.wrapper}>
             {lessons && <LessonsList lessons={lessons} />}
           </div>
-          <ReviewsList courseId={courseId} />
+          <Suspense fallback={<div>Загрузка отзывов...</div>}>
+            <ReviewsList courseId={courseId} />
+          </Suspense>
         </div>
       )}
     </>
