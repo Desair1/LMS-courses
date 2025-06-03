@@ -3,6 +3,7 @@ import { useGetCourseByIdQuery } from "../../features/api/coursesAPI";
 import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
 import LessonsList from "../../entities/lessonsList/LessonList";
 import styles from "./courseDetails.module.scss";
+import ReviewsList from "../../entities/reviewsList/Reviews";
 
 const CourseDetails = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -40,6 +41,7 @@ const CourseDetails = () => {
           <div className={styles.wrapper}>
             {lessons && <LessonsList lessons={lessons} />}
           </div>
+          <ReviewsList courseId={courseId} />
         </div>
       )}
     </>

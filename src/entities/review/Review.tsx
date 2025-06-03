@@ -1,7 +1,7 @@
 import type IReview from "../../types/review";
 import styles from "./Review.module.scss";
 
-const Review = ({ id, username, rating, text }: IReview) => {
+const Review = ({ username, rating, text }: IReview) => {
   return (
     <div className={styles.review}>
       <div className={styles.reviewHeader}>
