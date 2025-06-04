@@ -26,11 +26,11 @@ const CourseDetails = () => {
   }
 
   if (courseError) {
-    console.log("Course error", courseError);
+    throw new Error();
   }
 
   if (lessonsError) {
-    console.log("Lessons error", lessonsError);
+    throw new Error();
   }
 
   return (

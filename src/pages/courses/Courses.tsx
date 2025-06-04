@@ -11,7 +11,7 @@ const Courses = () => {
   }
 
   if (error) {
-    console.log(error);
+    throw new Error();
   }
 
   return (
