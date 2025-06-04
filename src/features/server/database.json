@@ -35,6 +35,20 @@
     },
     {
       "id": "3",
+      "title": "Третий урок по Redux",
+      "duration": "17 минут",
+      "isCompleted": false,
+      "courseId": "1"
+    },
+    {
+      "id": "4",
+      "title": "Четвертый урок по Redux",
+      "duration": "15 минут",
+      "isCompleted": false,
+      "courseId": "1"
+    },
+    {
+      "id": "3",
       "title": "Введение в React",
       "duration": "12 минут",
       "isCompleted": true,
