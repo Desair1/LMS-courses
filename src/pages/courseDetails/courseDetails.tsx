@@ -4,6 +4,7 @@ import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
 import LessonsList from "../../entities/lessonsList/LessonList";
 import styles from "./courseDetails.module.scss";
 import { lazy, Suspense } from "react";
+import OnMainPageBtn from "../../entities/backwardButton/onMainPageBtn";
 
 const CourseDetails = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -37,7 +38,10 @@ const CourseDetails = () => {
     <>
       {course && (
         <div>
-          <h2>{course.title}</h2>
+          <div className={styles.courseHeader}>
+            <h2>{course.title}</h2>
+            <OnMainPageBtn />
+          </div>
           <div>{course.fullDescription}</div>
           <div className={styles.wrapper}>
             {lessons && <LessonsList lessons={lessons} />}
