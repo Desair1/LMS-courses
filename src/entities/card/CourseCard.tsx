@@ -38,6 +38,7 @@ const CourseCard = ({
         <img
           src={imageURL}
           alt={`Превью курса: ${title}`}
+          loading="lazy"
           className={styles.courseImage}
         />
       )}
