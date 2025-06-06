@@ -1,9 +1,12 @@
+import { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
+
+import styles from "./courseDetails.module.scss";
+
 import { useGetCourseByIdQuery } from "../../features/api/coursesAPI";
 import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
+
 import LessonsList from "../../entities/lessonsList/LessonList";
-import styles from "./courseDetails.module.scss";
-import { lazy, Suspense } from "react";
 import OnMainPageBtn from "../../entities/backwardButton/onMainPageBtn";
 
 const CourseDetails = () => {
@@ -26,11 +29,7 @@ const CourseDetails = () => {
     return <div>Загрузка...</div>;
   }
 
-  if (courseError) {
-    throw new Error();
-  }
-
-  if (lessonsError) {
+  if (courseError || lessonsError) {
     throw new Error();
   }
 

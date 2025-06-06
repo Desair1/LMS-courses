@@ -1,5 +1,5 @@
 import type IReview from "../../types/review";
-import styles from "./Review.module.scss";
+import styles from "./review.module.scss";
 
 const Review = ({ username, rating, text }: IReview) => {
   return (

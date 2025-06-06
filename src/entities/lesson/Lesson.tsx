@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import type ILesson from "../../types/lesson";
 import styles from "./lesson.module.scss";
+
+import type ILesson from "../../types/lesson";
+
 import type { AppDispatch, RootState } from "../../features/redux/store";
 import { toggleLessonDetails } from "../../features/redux/slices/lessonsSlice";
 
