@@ -1,5 +1,5 @@
-import { useGetCoursesQuery } from "../../features/api/coursesAPI";
 import CourseCard from "../../entities/card/CourseCard";
+import { useGetCoursesQuery } from "../../features/api/coursesAPI";
 import type ICourseSummary from "../../types/courseSummary";
 import styles from "./courses.module.scss";
 
@@ -17,12 +17,12 @@ const Courses = () => {
   return (
     <div>
       <h1>Список курсов</h1>
-      <ul className={styles.coursesList}>
+      <div className={styles.coursesList}>
         {courses &&
           courses.map((course: ICourseSummary) => (
             <CourseCard key={course.id} {...course} />
           ))}
-      </ul>
+      </div>
     </div>
   );
 };

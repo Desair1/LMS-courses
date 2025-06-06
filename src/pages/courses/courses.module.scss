@@ -1,7 +1,17 @@
 .coursesList {
-  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.coursesList > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: 97.4%;
+}
+
+@media (max-width: 768px) {
+  .coursesList {
+    grid-template-columns: 1fr;
+  }
 }

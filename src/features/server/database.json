@@ -16,6 +16,14 @@
       "fullDescription": "Курс по основам React",
       "duration": "10 часов",
       "rating": 4
+    },
+    {
+      "id": "3",
+      "title": "JS для начинающих",
+      "author": "Иванова Мария",
+      "fullDescription": "Курс по основам JS",
+      "duration": "99 часов",
+      "rating": 4
     }
   ],
   "lessons": [
@@ -60,6 +68,20 @@
       "duration": "18 минут",
       "isCompleted": false,
       "courseId": "2"
+    },
+    {
+      "id": "1",
+      "title": "Типы данных в JS",
+      "duration": "18 минут",
+      "isCompleted": false,
+      "courseId": "3"
+    },
+    {
+      "id": "2",
+      "title": "Сравнение в JS",
+      "duration": "13 минут",
+      "isCompleted": false,
+      "courseId": "3"
     }
   ],
   "reviews": [
