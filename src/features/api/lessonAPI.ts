@@ -1,25 +1,10 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { SERVER_URL } from "../../shared/constants/api";
+import { createApi } from "@reduxjs/toolkit/query/react";
 import type ILesson from "../../types/lesson";
-
-const shouldSimulateError = () => {
-  const randomNumber = Math.random();
-  return randomNumber < 0.2;
-};
-
-const baseQuery = fetchBaseQuery({
-  baseUrl: SERVER_URL,
-  fetchFn: async (...args) => {
-    if (shouldSimulateError()) {
-      return Promise.reject(new Error("Simulated network error"));
-    }
-    return fetch(...args);
-  },
-});
+import { useFakeBaseQuery } from "../hooks/useFakeBaseQuery";
 
 export const lessonAPI = createApi({
   reducerPath: "lessonsAPI",
-  baseQuery: baseQuery,
+  baseQuery: useFakeBaseQuery,
   endpoints: (builder) => ({
     getLessonsForCourse: builder.query<ILesson[], string>({
       query: (courseId) => `/courses/${courseId}/lessons`,
