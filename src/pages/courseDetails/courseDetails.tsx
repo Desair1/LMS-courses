@@ -9,9 +9,10 @@ import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
 import LessonsList from "../../entities/lessonsList/LessonList";
 import OnMainPageBtn from "../../entities/backwardButton/onMainPageBtn";
 
+const ReviewsList = lazy(() => import("../../entities/reviewsList/Reviews"));
+
 const CourseDetails = () => {
   const { courseId } = useParams<{ courseId: string }>();
-  const ReviewsList = lazy(() => import("../../entities/reviewsList/Reviews"));
 
   const {
     data: course,

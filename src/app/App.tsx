@@ -1,5 +1,5 @@
-import ErrorBoundary from "../entities/errorBoundary/errorBoundary";
 import AppRouter from "./AppRouter";
+import ErrorBoundary from "../entities/errorBoundary/errorBoundary";
 import "./global.module.scss";
 
 function App() {
