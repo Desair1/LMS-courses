@@ -1,19 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
 import styles from "./lesson.module.scss";
 
 import type ILesson from "../../types/lesson";
 
-import type { AppDispatch, RootState } from "../../features/redux/store";
-import { toggleLessonDetails } from "../../features/redux/slices/lessonsSlice";
+import { useState } from "react";
 
 const LessonCard = ({ id, title, duration, isCompleted }: ILesson) => {
-  const dispatch = useDispatch<AppDispatch>();
-  const isExpended = useSelector(
-    (state: RootState) => state.lessons.expandedLessons[id] || false
-  );
+  const [isExpended, setIsExpended] = useState<boolean>(false);
 
   const toggleLessonExpended = () => {
-    dispatch(toggleLessonDetails(id));
+    setIsExpended(!isExpended);
   };
 
   return (
