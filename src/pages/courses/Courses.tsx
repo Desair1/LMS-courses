@@ -1,4 +1,5 @@
 import CourseCard from "../../entities/card/CourseCard";
+import SearchComponent from "../../entities/SearchComponent/SearchComponents";
 import { useGetCoursesQuery } from "../../features/api/coursesAPI";
 import type ICourseSummary from "../../types/courseSummary";
 import styles from "./courses.module.scss";
@@ -16,7 +17,10 @@ const Courses = () => {
 
   return (
     <div>
-      <h1>Список курсов</h1>
+      <div className={styles.header}>
+        <h1>Список курсов</h1>
+        <SearchComponent />
+      </div>
       <div className={styles.coursesList}>
         {courses &&
           courses.map((course: ICourseSummary) => (
