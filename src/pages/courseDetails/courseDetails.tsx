@@ -3,35 +3,22 @@ import { useParams } from "react-router-dom";
 
 import styles from "./courseDetails.module.scss";
 
-import { useGetCourseByIdQuery } from "../../features/api/coursesAPI";
-import { useGetLessonsForCourseQuery } from "../../features/api/lessonAPI";
-
 import LessonsList from "../../entities/lessonsList/LessonList";
 import OnMainPageBtn from "../../entities/backwardButton/onMainPageBtn";
+import { useGetCourseData } from "../../features/hooks/useGetCourseData";
+import { useGetLessonData } from "../../features/hooks/useGetLessonData";
 
 const ReviewsList = lazy(() => import("../../entities/reviewsList/Reviews"));
 
 const CourseDetails = () => {
   const { courseId } = useParams<{ courseId: string }>();
 
-  const {
-    data: course,
-    isLoading: courseIsLoading,
-    error: courseError,
-  } = useGetCourseByIdQuery(courseId!);
+  const { course, isLoading: courseIsLoading } = useGetCourseData(courseId);
 
-  const {
-    data: lessons,
-    isLoading: lessonsIsLoading,
-    error: lessonsError,
-  } = useGetLessonsForCourseQuery(courseId!);
+  const { lessons, isLoading: lessonsIsLoading } = useGetLessonData(courseId);
 
   if (courseIsLoading || lessonsIsLoading) {
     return <div>Загрузка...</div>;
-  }
-
-  if (courseError || lessonsError) {
-    throw new Error();
   }
 
   return (
