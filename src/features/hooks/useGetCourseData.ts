@@ -1,7 +1,5 @@
 import { useGetCourseByIdQuery } from "../api/coursesAPI";
 
-setTimeout(() => {}, 2000);
-
 export const useGetCourseData = (id: string | undefined) => {
   if (typeof id === "undefined") {
     throw new Error("Не удаётся перейти по данному адресу");

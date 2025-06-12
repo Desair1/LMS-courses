@@ -30,7 +30,7 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className={styles.errorContainer}>
-          <h2 className={styles.errorMessage}>Что-то пошло не так.</h2>
+          <h2 className={styles.errorMessage}>{this.state.error?.message}</h2>
           <p>
             Пожалуйста, попробуйте обновить страницу или свяжитесь с поддержкой.
           </p>

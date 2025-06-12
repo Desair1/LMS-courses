@@ -11,7 +11,7 @@ const Courses = () => {
   }
 
   if (error) {
-    throw new Error();
+    throw new Error("Не удалось загрузить список курсов");
   }
 
   return (
