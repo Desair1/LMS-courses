@@ -1,10 +1,7 @@
-import { createApi } from "@reduxjs/toolkit/query/react";
 import type ILesson from "../../types/lesson";
-import { useFakeBaseQuery } from "../hooks/useFakeBaseQuery";
+import { splitAPI } from "./splitAPI/splitAPI";
 
-export const lessonAPI = createApi({
-  reducerPath: "lessonsAPI",
-  baseQuery: useFakeBaseQuery,
+export const lessonAPI = splitAPI.injectEndpoints({
   endpoints: (builder) => ({
     getLessonsForCourse: builder.query<ILesson[], string>({
       query: (courseId) => `/courses/${courseId}/lessons`,

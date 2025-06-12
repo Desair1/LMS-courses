@@ -1,11 +1,8 @@
-import { createApi } from "@reduxjs/toolkit/query/react";
 import type ICourseSummary from "../../types/courseSummary";
 import type ICourseDetails from "../../types/courseDetails";
-import { useFakeBaseQuery } from "../hooks/useFakeBaseQuery";
+import { splitAPI } from "./splitAPI/splitAPI";
 
-export const coursesAPI = createApi({
-  reducerPath: "coursesAPI",
-  baseQuery: useFakeBaseQuery,
+export const coursesAPI = splitAPI.injectEndpoints({
   endpoints: (builder) => ({
     getCourses: builder.query<ICourseSummary[], void>({
       query: () => "/courses",

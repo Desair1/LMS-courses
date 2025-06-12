@@ -1,21 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { coursesAPI } from "../api/coursesAPI";
-import { lessonAPI } from "../api/lessonAPI";
-import { reviewsAPI } from "../api/reviewsAPI";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { splitAPI } from "../api/splitAPI/splitAPI";
 
 export const store = configureStore({
   reducer: {
-    [coursesAPI.reducerPath]: coursesAPI.reducer,
-    [lessonAPI.reducerPath]: lessonAPI.reducer,
-    [reviewsAPI.reducerPath]: reviewsAPI.reducer,
+    [splitAPI.reducerPath]: splitAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(
-      coursesAPI.middleware,
-      lessonAPI.middleware,
-      reviewsAPI.middleware
-    ),
+    getDefaultMiddleware().concat(splitAPI.middleware),
 });
 
 setupListeners(store.dispatch);

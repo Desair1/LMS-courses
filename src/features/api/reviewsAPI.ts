@@ -1,10 +1,7 @@
 import type IReview from "../../types/review";
-import { createApi } from "@reduxjs/toolkit/query/react";
-import { useFakeBaseQuery } from "../hooks/useFakeBaseQuery";
+import { splitAPI } from "./splitAPI/splitAPI";
 
-export const reviewsAPI = createApi({
-  reducerPath: "reviewsAPI",
-  baseQuery: useFakeBaseQuery,
+export const reviewsAPI = splitAPI.injectEndpoints({
   endpoints: (builder) => ({
     getReviewsForCourse: builder.query<IReview[], string>({
       query: (courseId) => `/courses/${courseId}/reviews`,
