@@ -1,10 +1,9 @@
 import { useState } from "react";
 import CourseCard from "../../entities/card/CourseCard";
-import SearchComponent from "../../entities/SearchComponent/SearchComponents";
 import { useGetCoursesQuery } from "../../features/api/coursesAPI";
 import type ICourseSummary from "../../types/courseSummary";
 import styles from "./courses.module.scss";
-import SearchComponent from "../../entities/searchComponent/searchComponent";
+import SearchComponent from "../../entities/SearchComponent/SearchComponent";
 
 const Courses = () => {
   const [searchTerm, setSearchTerm] = useState("");
