@@ -8,10 +8,4 @@ const shouldSimulateError = () => {
 
 export const useFakeBaseQuery = fetchBaseQuery({
   baseUrl: SERVER_URL,
-  fetchFn: async (...args) => {
-    if (shouldSimulateError()) {
-      return Promise.reject(new Error("Simulated network error"));
-    }
-    return fetch(...args);
-  },
 });

@@ -1,11 +1,19 @@
+import { useState } from "react";
 import CourseCard from "../../entities/card/CourseCard";
 import SearchComponent from "../../entities/SearchComponent/SearchComponents";
 import { useGetCoursesQuery } from "../../features/api/coursesAPI";
 import type ICourseSummary from "../../types/courseSummary";
 import styles from "./courses.module.scss";
+import SearchComponent from "../../entities/searchComponent/searchComponent";
 
 const Courses = () => {
-  const { data: courses, isLoading, error } = useGetCoursesQuery();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const onSearch = (term: string) => {
+    setSearchTerm(term);
+  };
+
+  const { data: courses, isLoading, error } = useGetCoursesQuery(searchTerm);
 
   if (isLoading) {
     return <div>Загрузка...</div>;
@@ -17,10 +25,8 @@ const Courses = () => {
 
   return (
     <div>
-      <div className={styles.header}>
-        <h1>Список курсов</h1>
-        <SearchComponent />
-      </div>
+      <h1>Список курсов</h1>
+      <SearchComponent onSearch={onSearch} />
       <div className={styles.coursesList}>
         {courses &&
           courses.map((course: ICourseSummary) => (
