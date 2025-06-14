@@ -1,22 +1,37 @@
+import { useState } from "react";
 import CourseCard from "../../entities/card/CourseCard";
-import { useGetCoursesQuery } from "../../features/api/coursesAPI";
+import { coursesAPI, useGetCoursesQuery } from "../../features/api/coursesAPI";
 import type ICourseSummary from "../../types/courseSummary";
 import styles from "./courses.module.scss";
+import SearchComponent from "../../entities/searchComponent/searchComponent";
+import { useDispatch } from "react-redux";
 
 const Courses = () => {
-  const { data: courses, isLoading, error } = useGetCoursesQuery();
+  const dispatch = useDispatch();
+  const [searchTerm, setSearchTerm] = useState("");
 
-  if (isLoading) {
-    return <div>Загрузка...</div>;
-  }
+  const onSearch = (term: string) => {
+    setSearchTerm(term);
+  };
 
-  if (error) {
-    throw new Error("Не удалось загрузить список курсов");
+  const { data: courses, isLoading, error } = useGetCoursesQuery(searchTerm);
+  try {
+    if (isLoading) {
+      return <div>Загрузка...</div>;
+    }
+
+    if (error) {
+      dispatch(coursesAPI.util.invalidateTags(["Course"]));
+      throw new Error("Не удалось загрузить список курсов");
+    }
+  } catch (error) {
+    dispatch(coursesAPI.util.invalidateTags(["Course"]));
   }
 
   return (
     <div>
       <h1>Список курсов</h1>
+      <SearchComponent onSearch={onSearch} />
       <div className={styles.coursesList}>
         {courses &&
           courses.map((course: ICourseSummary) => (
