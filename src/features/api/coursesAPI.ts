@@ -8,7 +8,7 @@ export const coursesAPI = splitAPI.injectEndpoints({
       query: (searchTerm) => {
         const url = "/courses";
         if (searchTerm) {
-          return `${url}/q=${searchTerm}`;
+          return `${url}/?q=${searchTerm}`;
         }
         return url;
       },
@@ -16,7 +16,7 @@ export const coursesAPI = splitAPI.injectEndpoints({
     }),
     getCourseById: builder.query<ICourseDetails, string>({
       query: (courseId) => `/courses/${courseId}`,
-      providesTags: ["Course"], // Добавляем тег
+      providesTags: ["Course"],
     }),
   }),
 });

@@ -1,13 +1,11 @@
 import { useState } from "react";
 import CourseCard from "../../entities/card/CourseCard";
-import { coursesAPI, useGetCoursesQuery } from "../../features/api/coursesAPI";
+import { useGetCoursesQuery } from "../../features/api/coursesAPI";
 import type ICourseSummary from "../../types/courseSummary";
 import styles from "./courses.module.scss";
 import SearchComponent from "../../entities/searchComponent/searchComponent";
-import { useDispatch } from "react-redux";
 
 const Courses = () => {
-  const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
 
   const onSearch = (term: string) => {
@@ -15,17 +13,12 @@ const Courses = () => {
   };
 
   const { data: courses, isLoading, error } = useGetCoursesQuery(searchTerm);
-  try {
-    if (isLoading) {
-      return <div>Загрузка...</div>;
-    }
 
-    if (error) {
-      dispatch(coursesAPI.util.invalidateTags(["Course"]));
-      throw new Error("Не удалось загрузить список курсов");
-    }
-  } catch (error) {
-    dispatch(coursesAPI.util.invalidateTags(["Course"]));
+  if (isLoading) {
+    return <div>Загрузка...</div>;
+  }
+
+  if (error) {
     throw new Error("Не удалось загрузить список курсов");
   }
 
