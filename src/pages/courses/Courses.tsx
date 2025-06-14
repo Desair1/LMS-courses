@@ -26,6 +26,7 @@ const Courses = () => {
     }
   } catch (error) {
     dispatch(coursesAPI.util.invalidateTags(["Course"]));
+    throw new Error("Не удалось загрузить список курсов");
   }
 
   return (
