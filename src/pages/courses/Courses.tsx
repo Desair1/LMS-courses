@@ -24,13 +24,19 @@ const Courses = () => {
 
   return (
     <div>
-      <h1>Список курсов</h1>
-      <SearchComponent onSearch={onSearch} />
+      <div className={styles.header}>
+        <h1>Список курсов</h1>
+        <SearchComponent onSearch={onSearch} />
+      </div>
       <div className={styles.coursesList}>
-        {courses &&
+        {courses && courses.length === 0 ? (
+          <div>Ничего не удалось найти</div>
+        ) : (
+          courses &&
           courses.map((course: ICourseSummary) => (
             <CourseCard key={course.id} {...course} />
-          ))}
+          ))
+        )}
       </div>
     </div>
   );
