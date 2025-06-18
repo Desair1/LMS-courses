@@ -25,11 +25,13 @@ const CourseDetails = () => {
     <>
       {course && (
         <div>
-          <div className={styles.courseHeader}>
-            <h2>{course.title}</h2>
-            <OnMainPageBtn />
+          <div className={styles.headerWrapper}>
+            <div className={styles.courseHeader}>
+              <h2>{course.title}</h2>
+              <OnMainPageBtn />
+            </div>
+            <div>{course.fullDescription}</div>
           </div>
-          <div>{course.fullDescription}</div>
           <div className={styles.wrapper}>
             {lessons && <LessonsList lessons={lessons} />}
           </div>
