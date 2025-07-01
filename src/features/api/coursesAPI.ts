@@ -12,11 +12,9 @@ export const coursesAPI = splitAPI.injectEndpoints({
         }
         return url;
       },
-      providesTags: ["Course"],
     }),
     getCourseById: builder.query<ICourseDetails, string>({
       query: (courseId) => `/courses/${courseId}`,
-      providesTags: ["Course"],
     }),
   }),
 });

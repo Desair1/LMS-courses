@@ -3,6 +3,5 @@ import { useFakeBaseQuery } from "../../hooks/useFakeBaseQuery";
 
 export const splitAPI = createApi({
   baseQuery: useFakeBaseQuery,
-  tagTypes: ["Course"],
   endpoints: () => ({}),
 });
